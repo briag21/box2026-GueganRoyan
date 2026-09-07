@@ -1,4 +1,4 @@
-# BOX 2026 Briag Guégan-Royan
+# BOX 2026
 
 >This repo contains labs and homework completed for the BOX course at ENS Rennes under the supervision of Karel Břinda and Léo Ackermann during the fall 2026 semester.
 
