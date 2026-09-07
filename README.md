@@ -10,4 +10,4 @@ python3 ./pathToScript/scriptName.py
 
 ## Summary
 
-- HW1 : A secret genome, subword complexity
+- [HW1: A secret genome, subword complexity](./HW1/)
