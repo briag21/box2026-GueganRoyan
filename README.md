@@ -8,4 +8,6 @@ Unless specified otherwise, scripts can be executed with:
 python3 ./pathToScript/scriptName.py
 ```
 
+## Summary
+
 - HW1 : A secret genome, subword complexity
