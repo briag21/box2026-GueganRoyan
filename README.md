@@ -11,3 +11,4 @@ python3 ./pathToScript/scriptName.py
 ## Summary
 
 - [HW1: A secret genome, subword complexity](./HW1/)
+- [HW2: k-mers, canonical k-mers, bits encoding](./HW2/)
