@@ -2,7 +2,7 @@
 # BOX HW3
 \raggedright
 
-# Notes about the naive implementation of greedy SCS
+# Notes about the implementation of greedy SCS
 
 We can optimize certain parts of the algorithm. For instance, ```w = merge(u, v)``` could avoid recomputing the overlap if we returned the overlap value directly from ```getStringsWithMaximalOverlap```. However, we chose to remain as close as possible to the exercise's pseudocode.
 
