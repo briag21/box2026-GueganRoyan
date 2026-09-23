@@ -12,3 +12,4 @@ python3 ./pathToScript/scriptName.py
 
 - [HW1: A secret genome, subword complexity](./HW1/)
 - [HW2: k-mers, canonical k-mers, bits encoding](./HW2/)
+- [HW3: The Shortest Common Superstring problem](./HW3/)
