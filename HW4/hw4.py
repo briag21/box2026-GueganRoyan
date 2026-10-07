@@ -6,10 +6,10 @@ from kmer_treatment import make_canonical, reverse_complement
 from collections import Counter
 
 FILES = [
-    "ecoli_sample_perfect_reads_forward.fasta.gz",
-    "ecoli_sample_perfect_reads.fasta.gz",
-    "ecoli_sample_reads_001.fasta.gz",
-    "ecoli_sample_reads_01.fasta.gz",
+    "./fastas/ecoli_sample_perfect_reads_forward.fasta.gz",
+    "./fastas/ecoli_sample_perfect_reads.fasta.gz",
+    "./fastas/ecoli_sample_reads_001.fasta.gz",
+    "./fastas/ecoli_sample_reads_01.fasta.gz",
 ]
 K = 31
 
