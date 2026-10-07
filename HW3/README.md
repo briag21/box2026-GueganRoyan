@@ -5,4 +5,4 @@
 - Code : 
     1. **[Greedy](./hw3_q1.py)**
     2. **[TSP to SCS](./hw3_q4.py)**
-    3. **[Experimentation](./hw1_q5.py)**
+    3. **[Experimentation](./hw3_q5.py)**
