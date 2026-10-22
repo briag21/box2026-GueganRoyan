@@ -14,3 +14,4 @@ python3 ./pathToScript/scriptName.py
 - [HW2: k-mers, canonical k-mers, bits encoding](./HW2/)
 - [HW3: The Shortest Common Superstring problem](./HW3/)
 - [HW4: Genome assembly](./HW4/)
+- [HW5: Pattern matching](./HW5/)
