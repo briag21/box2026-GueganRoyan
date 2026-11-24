@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import networkx as nx
-from readfa import readfq
+from HW7.readfa import readfq
 from xopen import xopen
 from kmer_treatment import make_canonical, reverse_complement
 from collections import Counter
@@ -13,6 +13,7 @@ FILES = [
 ]
 K = 31
 
+
 def read_seqs(path):
     with xopen(path) as fasta:
         for _, seq, _ in readfq(fasta):
@@ -23,7 +24,7 @@ def count_kmers(seqs, k):
     counts = Counter()
     for seq in seqs:
         for i in range(len(seq) - k + 1):
-            counts[make_canonical(seq[i:i + k])] += 1
+            counts[make_canonical(seq[i : i + k])] += 1
     return counts
 
 
@@ -80,26 +81,30 @@ def plot_mult(mults, names, out="mult.png"):
     plt.savefig(out, dpi=200, bbox_inches="tight")
     plt.close()
 
+
 def evaluate_t(path, truth):
     for t in range(1, 8):
         kept = create_dbg(path, 31, t).keys()
         print(t, len(kept), len(kept - truth), len(truth - kept))
+
 
 def predecessors(dbg, x):
     return [b + x[:-1] for b in "ACGT" if in_dbg(dbg, b + x[:-1])]
 
 
 def extend_right(dbg, s, visited):
-    bases = [] # list of added bps
+    bases = []  # list of added bps
     cur = s
     while True:
         succ = successors(dbg, cur)
-        if len(succ) != 1: #exactly one successor to continue the unitig
+        if len(succ) != 1:  # exactly one successor to continue the unitig
             break
         nxt = succ[0]
-        if len(predecessors(dbg, nxt)) != 1: #exactly one predecessor for the successor to continue the unitig
+        if (
+            len(predecessors(dbg, nxt)) != 1
+        ):  # exactly one predecessor for the successor to continue the unitig
             break
-        if make_canonical(nxt) in visited:  #cycle detection
+        if make_canonical(nxt) in visited:  # cycle detection
             break
         visited.add(make_canonical(nxt))
         bases.append(nxt[-1])
@@ -117,13 +122,15 @@ def unitig_from(dbg, s, visited=None):
     left = extend_right(dbg, reverse_complement(s), visited)
     return reverse_complement(left) + s + right
 
+
 def unitig_sizes(path, start):
-    for t in (1,2,3,4):
+    for t in (1, 2, 3, 4):
         dbg = create_dbg(path, 31, t)
         if in_dbg(dbg, start):
             print(t, len(unitig_from(dbg, start)))
         else:
             print(t, "k-mer absent")
+
 
 def create_unitigs(dbg):
     visited = set()
@@ -133,10 +140,12 @@ def create_unitigs(dbg):
             unitigs.append(unitig_from(dbg, kmer, visited))
     return unitigs
 
+
 def unitig_totals(path):
-    for t in (1,2,3,4):
+    for t in (1, 2, 3, 4):
         unitigs = create_unitigs(create_dbg(path, 31, t))
         print(t, sum(len(u) for u in unitigs))
+
 
 def main():
     # Q3: toy graphs
@@ -167,6 +176,7 @@ def main():
     for f in FILES:
         print(f)
         unitig_totals(f)
+
 
 if __name__ == "__main__":
     main()
