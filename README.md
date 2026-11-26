@@ -15,3 +15,5 @@ python3 ./pathToScript/scriptName.py
 - [HW3: The Shortest Common Superstring problem](./HW3/)
 - [HW4: Genome assembly](./HW4/)
 - [HW5: Pattern matching](./HW5/)
+- [HW6: BWT](./HW6/) NOT DONE
+- [HW7: Building a read aligner](./HW7/)
